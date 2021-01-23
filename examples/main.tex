@@ -1,0 +1,18 @@
+%! TEX program = xelatex
+%! TEX encoding = UTF-8 Unicode
+
+%%% Preamble
+\documentclass[11pt]{article}
+\usepackage{$TEXDIR/unal}    % TEXDIR should point to this repo
+\geometry{letterpaper}
+%\geometry{papersize={9cm,12cm}, margin=0.1cm}    % Kindle4 dimensions
+
+\begin{document}
+
+\input{text/examples}
+
+% listings should be on their own source code file
+\lstset{style=mycolorstyle}
+\lstinputlisting[language=C, caption=Code listing example]{listings/hello.c}
+
+\end{document}

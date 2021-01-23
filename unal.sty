@@ -1,0 +1,98 @@
+% Basic Style file for the Universidad Nacional de Colombia
+%
+% Maintainer:  Sergio Alejandro Vargas <savargasqu+git@unal.edu.co>
+% Last Change: 2021-01-23
+
+\ProvidesPackage{vargas}
+
+%%% Basics
+\usepackage{caption}
+\usepackage{float}
+\usepackage{geometry}             % Page layout
+\usepackage{graphicx}             % Images support
+\usepackage[colorlinks=false]{hyperref} % Hyperlinks
+\usepackage{multicol}             % Multicolumn output
+
+
+%%% Mathematics
+% amsmath and amsfonts don't need to be loaded explicitly
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{cancel}
+
+
+%%% i18n and fonts
+\usepackage{iftex}
+\ifpdftex % Use Spanish
+    \usepackage[utf8]{inputenc}
+    \usepackage[english, spanish]{babel} 
+    \unaccentedoperators
+
+\else\ifxetex % Use Spanish, and the Ancizar typeface
+    \usepackage{fontspec} % don't use mathspec
+    \usepackage{polyglossia}
+        \setdefaultlanguage{spanish}
+        \setotherlanguages{english}
+
+    % NOTE: The Ancizar typeface is not open source
+    \setmainfont{Ancizar Serif Light}
+    \setsansfont{Ancizar Sans Light}
+    \setmonofont{IBM Plex Mono} % TODO: Find a mono-font that goes nicely w/ Ancizar
+
+\else\ifluatex % Use English
+    \usepackage{fontspec}
+\fi\fi\fi
+
+
+%%% Tables
+\usepackage{array}        % table customisation
+\usepackage{tabularx}
+\usepackage{booktabs}     % pretty tables
+\usepackage{longtable}    % tables longer than a page
+\usepackage{multirow}
+% Make first row of a table bold: https://tex.stackexchange.com/a/4816
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+
+
+%%% Colors
+\usepackage[dvipsnames]{xcolor}
+\definecolor{unalgreenmain}{RGB}{148,180,59}
+\definecolor{unalredmain}{RGB}{166,28,49}
+
+\definecolor{unalgreencomp}{RGB}{70,107,63}
+\definecolor{unalredcomp}{RGB}{118,35,47}
+
+\definecolor{unalgraydark}{RGB}{86,90,92}
+\definecolor{unalgraylight}{RGB}{177,178,176}
+
+
+%%% Code listings
+\usepackage{verbatim}
+\usepackage{listings}
+\lstloadlanguages{C, Python}
+\lstdefinestyle{mycolorstyle}{
+    basicstyle=\footnotesize\ttfamily,
+    % Syntax Colors
+        keywordstyle=\color{unalredmain}, % defined above
+        stringstyle=\color{unalgreenmain},
+        commentstyle=\itshape\color{unalgraydark},
+    % Spacing
+        showstringspaces=false,
+        keepspaces,
+        breaklines=false, % nowrap
+        tabsize=4,
+    % Line numbers
+        numbers=left,
+        numberstyle=\tiny,
+        numbersep=3pt,
+        % stepnumber=2,
+    % Frame and caption
+        frame=lines,
+        rulecolor=\color{black},
+        captionpos=top,
+}

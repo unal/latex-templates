@@ -1,0 +1,35 @@
+%! TEX program = xelatex
+%! TEX encoding = UTF-8 Unicode
+
+%%% Preamble
+\documentclass[11pt]{article}
+\usepackage{$TEXDIR/unal}    % TEXDIR should point to this repo
+\geometry{letterpaper}
+%\geometry{papersize={9cm,12cm}, margin=0.1cm}    % Kindle4 dimensions
+
+%%% Title & Author
+\title{
+    {Title} \\
+    \large{subtitle}
+}
+\author{
+    Manuel Ancízar |
+    \href{mailto:meancizarb@unal.edu.co}{meancizarb@unal.edu.co} \\
+    \normalsize{
+        {course} --- Grupo \# {1}
+    }\\
+    \normalsize{Universidad Nacional de Colombia}
+}
+%\date{\today}
+
+\begin{document}
+\maketitle
+
+%%% Body text (Use \input w/o extension)
+\input{text/temp}
+
+%%% References
+%\bibliographystyle{plain}
+%\bibliography{bibliog}
+
+\end{document}
