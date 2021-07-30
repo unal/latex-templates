@@ -1,16 +1,15 @@
 #!/bin/sh
 
 # Replace old TeX diacritics commands with proper UTF-8 characters.
-# (the .bak file is necessary for portability across Linux and BSD/MacOS).
 
-sed -i.bak -e "s/\\\\'a/á/g" \
-           -e "s/\\\\'e/é/g" \
-           -e "s/\\\\'i/í/g" \
-           -e "s/\\\\'o/ó/g" \
-           -e "s/\\\\'u/ú/g" \
-           -e 's/\\"u/ü/g' \
-           -e 's/\\~n/ñ/g' \
-           -e 's/\\"a/ä/g' \
-           -e 's/\\"o/ö/g' \
-           -e 's/\\ss/ß/g' $1
-rm "$1.bak"
+sed -i '' \
+    -e "s/\\\\'a/á/g" \
+    -e "s/\\\\'e/é/g" \
+    -e "s/\\\\'i/í/g" \
+    -e "s/\\\\'o/ó/g" \
+    -e "s/\\\\'u/ú/g" \
+    -e 's/\\"u/ü/g' \
+    -e 's/\\~n/ñ/g' \
+    -e 's/\\"a/ä/g' \
+    -e 's/\\"o/ö/g' \
+    -e 's/\\ss/ß/g' $1
