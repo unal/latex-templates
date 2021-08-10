@@ -10,6 +10,7 @@ and less time debugging LaTeX.
   - `fixdiacritics`: replace old TeX accent commands with proper UTF-8 characters, e.g. \'a -> á
     (works for Spanish and German).
   - `newtex`: copy templates to create a new project
+    (the environment variable `TEXDIR` should be point to this repo).
 
 * Templates
   - `article`

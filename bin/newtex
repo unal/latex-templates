@@ -1,7 +1,9 @@
 #!/bin/sh
 
 if [ "$#" -ne 0 ]; then
-    cp -r "$TEXDIR/templates/$1" $2 && echo "New LaTeX project: ${2}"
+    cp -r "$TEXDIR/templates/$1" $2
+    cp "$TEXDIR/unal.sty" $2
+    echo "New LaTeX project: ${2}"
 else
     echo "Usage: newtex <document-class> <project-name>"
 fi

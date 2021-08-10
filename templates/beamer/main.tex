@@ -1,19 +1,17 @@
 %! TEX TS-program = xelatex
 %! TEX encoding = UTF-8 Unicode
 
-%%% Preamble
 \documentclass[
     xcolor={dvipsnames},
     hyperref={colorlinks=false}
 ]{beamer}
-\usepackage{$TEXDIR/unal}    % TEXDIR should point to this repo
+\usepackage{./unal}
 \usetheme{metropolis}
 \setbeamercolor{normal text}{fg=unalgreencomp!40!black!100,bg=black!10}
 \setbeamercolor{frametitle}{bg=unalgreencomp}
 \setbeamercolor{progress bar}{fg=unalredcomp}
 
 
-%%% Title page
 \title{Title}
 \subtitle{course}
 \author{Manuel Ancízar}
@@ -26,5 +24,4 @@
 %%% Slides (use \input w/o extension)
 \input{slides/temp}
 
-% Add QR code generator
 \end{document}
